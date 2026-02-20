@@ -3,6 +3,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "dag-ngx": [
+        "./dist/dag-ngx"
+      ]
+    },
     "skipLibCheck": true,
     "isolatedModules": true,
     "experimentalDecorators": true,
@@ -13,5 +18,13 @@
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/dag-ngx/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/dag-ngx/tsconfig.spec.json"
+    }
+  ]
 }
