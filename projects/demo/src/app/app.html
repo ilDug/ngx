@@ -2,6 +2,10 @@
     <div class="titles">
         <h1>DAG-NGX</h1>
         <h3>Utilities for Angular applications</h3>
+        <div class="nav">
+            <a class="btn" (click)="section.set('errors')">errors</a>
+            <a class="btn" (click)="section.set('drag-and-drop')">drag-and-drop</a>
+        </div>
     </div>
 
     <div id="github">
@@ -12,5 +16,15 @@
         </a>
     </div>
 
-    <demo-errors />
+    <div class="content">
+        @switch (section()) {
+            @case ('errors') {
+                <demo-errors />
+            }
+
+            @case ('drag-and-drop') {
+                <p>drag and drop demo coming soon...</p>
+            }
+        }
+    </div>
 </div>

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use "sass:color";
 @import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
 
 * {
@@ -7,6 +8,7 @@
 $colorMain: rgb(247, 174, 174);
 $colorAccent: rgb(193, 174, 247);
 $colorError: rgb(248, 105, 61);
+$pageWidth: 400px;
 
 .container {
     font-family: 'Comfortaa', cursive;
@@ -35,6 +37,7 @@ $colorError: rgb(248, 105, 61);
 
         margin: 0 auto;
         position: relative;
+        max-width: $pageWidth;
 
         h1 {
             font-size: 3rem;
@@ -50,7 +53,7 @@ $colorError: rgb(248, 105, 61);
             background-color: rgb(224, 208, 208);
             overflow: scroll;
             margin: 0 auto;
-            max-width: 400px;
+            max-width: $pageWidth;
         }
     }
 
@@ -61,17 +64,26 @@ $colorError: rgb(248, 105, 61);
         border: solid 1px;
         border-radius: 5px;
         text-decoration: none;
-        border-color: darken($colorMain, 10%);
+        border-color: color.adjust($colorMain, $lightness: -10%);
 
         &:hover {
-            background: darken($colorMain, 10%);
+            background: color.adjust($colorMain, $lightness: -10%);
         }
+        cursor: pointer;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        max-width: $pageWidth;
     }
 
     .example {
         display: flex;
         flex-direction: column;
-        width: 380px;
+        width: $pageWidth;
         margin: 0 auto;
         text-align: center;
     }
@@ -101,6 +113,11 @@ pre {
     text-align: start;
     padding: 0 1rem;
     border-radius: 1rem;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: $pageWidth;
 }
 
 #ngx-errors {
