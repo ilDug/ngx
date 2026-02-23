@@ -5,7 +5,7 @@
   "compilerOptions": {
     "paths": {
       "dag-ngx": [
-        "./dist/dag-ngx"
+        "./projects/dag-ngx/src/public-api.ts"
       ]
     },
     "skipLibCheck": true,

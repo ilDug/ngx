@@ -1,12 +1,14 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Errors } from './errors/errors';
+
 
 @Component({
   selector: 'demo-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+    imports: [Errors],
+    templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('demo');
+
+
+
 }

@@ -1,1 +1,113 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+$colorMain: rgb(247, 174, 174);
+$colorAccent: rgb(193, 174, 247);
+$colorError: rgb(248, 105, 61);
+
+.container {
+    font-family: 'Comfortaa', cursive;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(234, 234, 234);
+
+    #github {
+        margin: 0 auto;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        img {
+            height: 30px;
+        }
+    }
+    .titles {
+        text-align: center;
+        padding: 2rem;
+        color: rgb(100, 100, 100);
+
+        margin: 0 auto;
+        position: relative;
+
+        h1 {
+            font-size: 3rem;
+            color: rgb(120, 141, 153);
+        }
+        h4 {
+            color: rgb(60, 98, 121);
+            font-weight: bolder;
+        }
+
+        pre {
+            padding: 1rem;
+            background-color: rgb(224, 208, 208);
+            overflow: scroll;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        color: white;
+        background: $colorMain;
+        border: solid 1px;
+        border-radius: 5px;
+        text-decoration: none;
+        border-color: darken($colorMain, 10%);
+
+        &:hover {
+            background: darken($colorMain, 10%);
+        }
+    }
+
+    .example {
+        display: flex;
+        flex-direction: column;
+        width: 380px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin: 1rem 0 0.5rem;
+        color: rgb(100, 100, 100);
+        float: left;
+    }
+    input {
+        display: block;
+        padding: 0.5rem;
+        border: solid 1px;
+        border-radius: 5px;
+        border-color: rgb(200, 200, 200);
+        width: 100%;
+    }
+
+    .error {
+        color: $colorError;
+    }
+}
+
+pre {
+    background-color: #ccc;
+    text-align: start;
+    padding: 0 1rem;
+    border-radius: 1rem;
+}
+
+#ngx-errors {
+    h4 {
+        color: $colorAccent;
+    }
+    dag-error {
+        text-align: left;
+    }
+}

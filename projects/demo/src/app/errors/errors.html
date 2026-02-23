@@ -1,0 +1,31 @@
+<div class="example" id="ngx-errors">
+    <h4>NGX-ERRORS</h4>
+    <form novalidate (submit)="onSubmit($event)">
+        <div>
+            <label>user</label>
+            <input type="text" [formField]="form.name" />
+            <dag-error [field]="form.name"></dag-error>
+        </div>
+        <div>
+            <label>email</label>
+            <input type="email" [formField]="form.email" />
+            <dag-error [field]="form.email"></dag-error>
+        </div>
+        <div>
+            <label>password</label>
+            <input type="password" [formField]="form.password" />
+            <dag-error [field]="form.password"></dag-error>
+        </div>
+        <div style="padding: 1rem 0; display: flex">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
+
+    <pre>
+        <code>
+USER:
+{{ user() | json }}
+
+        </code>
+  </pre>
+</div>
