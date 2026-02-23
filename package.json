@@ -1,6 +1,13 @@
 {
-  "name": "dag-ngx",
-  "version": "0.0.0",
+  "name": "@ildug/dag-ngx",
+  "version": "21.0.0",
+  "description": "A utilities library for Angular applications.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilDug/ngx.git"
+  },
+  "author": "ilDug",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,7 +28,6 @@
     ]
   },
   "private": true,
-  "packageManager": "npm@11.8.0",
   "dependencies": {
     "@angular/common": "^21.1.0",
     "@angular/compiler": "^21.1.0",
