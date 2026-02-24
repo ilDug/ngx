@@ -1,0 +1,36 @@
+name: Deploy static content to Pages
+on:
+    release:
+        types: [published]
+    workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+            - uses: oven-sh/setup-bun@v2
+            - run: bun install --frozen-lockfile
+            - name: Build Demo Page
+                  # build the application: remmeber to set the base-href i packaje.json
+                  # ng build demo --base-href https://<user>.github.io/<repo>/
+              run: |
+                  npm run build:pages
+            - name: Configure GitHub Pages
+              uses: actions/configure-pages@v4
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v4
+              with:
+                  # Upload the build dist directory (DAG)
+                  # set the dist destination folder (where angular puts the built files)
+                  path: ./dist/demo/browser
+            - name: Deploy to GitHub Pages
+              uses: actions/deploy-pages@v4
+
+

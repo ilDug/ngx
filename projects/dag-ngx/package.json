@@ -1,12 +1,19 @@
 {
-  "name": "dag-ngx",
-  "version": "21.0.1",
-  "peerDependencies": {
-    "@angular/common": "^21.1.0",
-    "@angular/core": "^21.1.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "sideEffects": false
+    "name": "@ildug/dag-ngx",
+    "version": "21.0.0",
+    "description": "A utilities library for Angular applications.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ilDug/ngx.git"
+    },
+    "author": "ilDug",
+    "license": "MIT",
+    "peerDependencies": {
+        "@angular/common": "^21.1.0",
+        "@angular/core": "^21.1.0"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "sideEffects": false
 }

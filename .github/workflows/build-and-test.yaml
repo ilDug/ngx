@@ -1,0 +1,18 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code
+
+name: Build
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+            - uses: oven-sh/setup-bun@v2
+            - run: bun install --frozen-lockfile
+            - run: bun run build
