@@ -1,4 +1,6 @@
 # DagNgx
+[![Build](https://github.com/ilDug/ngx/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/ilDug/ngx/actions/workflows/build-and-test.yaml)
+
 
 DagNgx is a collection of Angular components and utilities designed to simplify the development of complex applications. It provides a set of reusable UI components, services, and tools that can be easily integrated into your Angular projects.
 
