@@ -1,59 +1,48 @@
 # DagNgx
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+DagNgx is a collection of Angular components and utilities designed to simplify the development of complex applications. It provides a set of reusable UI components, services, and tools that can be easily integrated into your Angular projects.
 
-## Development server
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Installation
+To install DagNgx, you can use npm:
 
 ```bash
-ng generate component component-name
+npm install dag-ngx
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Usage
+After installing DagNgx, you can import the desired components and services into your Angular modules. For example, to use a component:
 
-```bash
-ng generate --help
+```typescript
+...
+import { DagError } from 'dag-ngx';
+...
+
+@Component({
+    ...,
+    imports: [..., DagError],
+    ...
+})
+export class YourComponent {
+  ...
+}
 ```
 
-## Building
 
-To build the project run:
+## Features
 
-```bash
-ng build
+### DagError
+A component for displaying error messages in a user-friendly manner when used with **Angular signal forms**. It can be used to show validation errors, server errors, or any other type of error that may occur in your form.
+
+```html
+    <form novalidate (submit)="onSubmit($event)">
+        <div>
+            <label>email</label>
+            <input type="email" [formField]="form.email" />
+            <dag-error [field]="form.email"></dag-error>
+        </div>
+        <div style="padding: 1rem 0; display: flex">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

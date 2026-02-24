@@ -1,63 +1,48 @@
 # DagNgx
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
+DagNgx is a collection of Angular components and utilities designed to simplify the development of complex applications. It provides a set of reusable UI components, services, and tools that can be easily integrated into your Angular projects.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Installation
+To install DagNgx, you can use npm:
 
 ```bash
-ng generate --help
+npm install dag-ngx
 ```
 
-## Building
+## Usage
+After installing DagNgx, you can import the desired components and services into your Angular modules. For example, to use a component:
 
-To build the library, run:
+```typescript
+...
+import { DagError } from 'dag-ngx';
+...
 
-```bash
-ng build dag-ngx
+@Component({
+    ...,
+    imports: [..., DagError],
+    ...
+})
+export class YourComponent {
+  ...
+}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
 
-### Publishing the Library
+## Features
 
-Once the project is built, you can publish your library by following these steps:
+### DagError
+A component for displaying error messages in a user-friendly manner when used with **Angular signal forms**. It can be used to show validation errors, server errors, or any other type of error that may occur in your form.
 
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/dag-ngx
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```html
+    <form novalidate (submit)="onSubmit($event)">
+        <div>
+            <label>email</label>
+            <input type="email" [formField]="form.email" />
+            <dag-error [field]="form.email"></dag-error>
+        </div>
+        <div style="padding: 1rem 0; display: flex">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
