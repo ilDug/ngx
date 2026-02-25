@@ -1,3 +1,4 @@
+@use 'sass:color';
 $colorDrag: rgb(247, 174, 174);
 $colorDrop: rgb(193, 174, 247);
 
@@ -13,7 +14,7 @@ $colorDrop: rgb(193, 174, 247);
 }
 #dragme {
     background-color: $colorDrag;
-    border-color: darken($colorDrag, 10%);
+    border-color: color.scale($colorDrag, $lightness: -10%);
     #cards {
         display: flex;
         flex-direction: row;
@@ -23,10 +24,10 @@ $colorDrop: rgb(193, 174, 247);
 }
 #dropme {
     background-color: $colorDrop;
-    border-color: darken($colorDrop, 10%);
+    border-color: color.scale($colorDrop, $lightness: -10%);
 
     &.drag-over {
-        background-color: adjust-hue($colorDrop, 30deg);
+        background-color: color.adjust($colorDrop, $hue: 30deg);
         border-style: dashed;
     }
 }
