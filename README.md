@@ -48,3 +48,31 @@ A component for displaying error messages in a user-friendly manner when used wi
         </div>
     </form>
 ```
+
+### DagDrag and DagDrop
+Directives for implementing drag-and-drop functionality in your Angular applications. They allow you to easily make elements draggable and define drop zones where draggable items can be dropped.
+
+```html
+    <div id="dragme">
+        <h5>drag a object</h5>
+        <div id="cards">
+            @for (obj of items; track obj.name) {
+                <span class="semen">
+                    <img [src]="obj.src" [dagDrag]="obj" (onDrag)="isDragging($event)" />
+                </span>
+            }
+        </div>
+    </div>
+    <div id="dropme" (dagDrop)="setObject($event)">
+        <h5>drop here</h5>
+        @if (object()) {
+            <span class="semen">
+                <img [src]="object().src" />
+            </span>
+        }
+    </div>
+```
+
+Use `[dagDrag]` to make an element draggable and bind it to the data you want to transfer during the drag operation. Use `(dagDrop)` to define a drop zone and handle the dropped data.
+
+Use `(onDrag)` to listen for dragging events and update your component state accordingly. it returns a boolean indicating whether the element is currently being dragged.

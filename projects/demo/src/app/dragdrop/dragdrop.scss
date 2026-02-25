@@ -1,0 +1,38 @@
+@use 'sass:color';
+$colorDrag: rgb(247, 174, 174);
+$colorDrop: rgb(193, 174, 247);
+
+#dragme,
+#dropme {
+    padding: 1rem;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+#dragme {
+    background-color: $colorDrag;
+    border-color: color.scale($colorDrag, $lightness: -10%);
+    #cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+}
+#dropme {
+    background-color: $colorDrop;
+    border-color: color.scale($colorDrop, $lightness: -10%);
+
+    &.drag-over {
+        background-color: color.adjust($colorDrop, $hue: 30deg);
+        border-style: dashed;
+    }
+}
+
+.semen {
+    width: 3rem;
+    display: inline-block;
+}

@@ -11,6 +11,7 @@ on:
 
 permissions:
     contents: read
+    id-token: write  # Required for OIDC
 
 jobs:
     build:
@@ -42,8 +43,7 @@ jobs:
             - name: Publish to npm
               run: npm publish --access public
               working-directory: dist/dag-ngx
-            #   env:
-            #       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
     publish-github-packages:
         needs: build
         runs-on: ubuntu-latest
