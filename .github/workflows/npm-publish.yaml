@@ -12,7 +12,6 @@ on:
 permissions:
     contents: read
 
-
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -41,32 +40,29 @@ jobs:
                   node-version: "24"
                   registry-url: "https://registry.npmjs.org"
             - name: Publish to npm
-            #   run: npm publish --access public
-              run: |
-                ls -lah
-                cat package.json
+              run: npm publish --access public
               working-directory: dist/dag-ngx
             #   env:
             #       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    # publish-github-packages:
-    #     needs: build
-    #     runs-on: ubuntu-latest
-    #     permissions:
-    #         contents: read
-    #         packages: write
-    #     steps:
-    #         - name: Download built directory
-    #           uses: actions/download-artifact@v6
-    #           with:
-    #               name: dag-ngx
-    #               path: dist/dag-ngx
-    #         - name: Setup node
-    #           uses: actions/setup-node@v6
-    #           with:
-    #               node-version: "24"
-    #               registry-url: "https://npm.pkg.github.com"
-    #         - name: Publish to GitHub Packages
-    #           run: npm publish --access public
-    #           working-directory: dist/dag-ngx
-    #           env:
-    #               NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    publish-github-packages:
+        needs: build
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+        steps:
+            - name: Download built directory
+              uses: actions/download-artifact@v6
+              with:
+                  name: dag-ngx
+                  path: dist/dag-ngx
+            - name: Setup node
+              uses: actions/setup-node@v6
+              with:
+                  node-version: "24"
+                  registry-url: "https://npm.pkg.github.com"
+            - name: Publish to GitHub Packages
+              run: npm publish --access public
+              working-directory: dist/dag-ngx
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

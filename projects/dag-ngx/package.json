@@ -6,6 +6,7 @@
         "type": "git",
         "url": "git+https://github.com/ilDug/ngx.git"
     },
+    "homepage": "https://ildug.github.io/ngx/",
     "author": "ilDug",
     "license": "MIT",
     "peerDependencies": {
