@@ -3,7 +3,7 @@ import { Directive, input, output } from '@angular/core';
 @Directive({
     selector: '[dagDrag]',
     host: {
-        '[draggable]': 'true', // Make the element draggable
+        '[attr.draggable]': 'true', // Make the element draggable
         '(drag)': 'onDrag($event)', // Listen for the drag event
         '(dragstart)': 'onDragStart($event)', // Listen for the drag start event
         '(dragend)': 'onDragEnd($event)', // Listen for the drag end event
@@ -15,7 +15,7 @@ export class DagDrag<T> {
      *  This property can be used to track the dragging state of the element.
      *  It emits when dragging starts.
      */
-    dragging = output<boolean>();
+    isDragging = output<boolean>({ alias: 'onDrag' });
 
     /** data transfered during the drag operation */
     dagDrag = input<T>()
@@ -33,7 +33,7 @@ export class DagDrag<T> {
     // Handle drag start event
     onDragStart(event: DragEvent) {
         event.stopPropagation(); // Stop propagation to prevent unwanted side effects
-        this.dragging.emit(true); // Emit dragging state
+        this.isDragging.emit(true); // Emit dragging state
 
         if (this.placeholder()) {
             // Position the placeholder at the current mouse position
@@ -62,7 +62,7 @@ export class DagDrag<T> {
     onDragEnd(event: DragEvent) {
         event.preventDefault(); // Prevent default behavior to allow dragging
         event.stopPropagation(); // Stop propagation to prevent unwanted side effects
-        this.dragging.emit(false); // Emit dragging state
+        this.isDragging.emit(false); // Emit dragging state
 
         const placeholder = this.placeholder();
         if (placeholder?.parentNode) {

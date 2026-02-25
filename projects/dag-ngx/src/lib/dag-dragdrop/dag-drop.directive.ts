@@ -7,7 +7,7 @@ import { Directive, output, signal } from '@angular/core';
         '(dragover)': 'onDragOver($event)', // Listen for the drag over event
         '(dragleave)': 'onDragLeave($event)', // Listen for the drag leave event
         '[class.drag-over]': 'isDragOver()',// Add a class when an item is dragged over the element
-        '[droppable]': 'true', // Make the element a drop target
+        '[attr.droppable]': 'true', // Make the element a drop target
     }
 })
 export class DagDrop<T> {

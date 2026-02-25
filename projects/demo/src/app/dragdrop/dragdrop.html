@@ -1,1 +1,34 @@
-<p>dragdrop works!</p>
+<div class="example" id="dag-dragdrop">
+    <div class="titles">
+        <p>Angular directives for passing data with Drag & Drop</p>
+
+        <h4>dagDrag</h4>
+        <p>Assign a value to an element witch will be dragged</p>
+        <pre>&lt;div [dagDrag]="item" &gt; drag me &lt;/div&gt;</pre>
+
+        <h4>dagDrop</h4>
+        <p>Listen for the drop event and get dropped data</p>
+        <pre>&lt;div (dagDrop)="useItem($event)" &gt; drop here &lt;/div&gt;</pre>
+
+    </div>
+
+
+    <div id="dragme">
+        <h5>drag a card</h5>
+        <div id="cards">
+            @for (card of items; track card.name) {
+                <span class="semen">
+                    <img [src]="card.src" [dagDrag]="card" (onDrag)="logDragging($event)" />
+                </span>
+            }
+        </div>
+    </div>
+    <div id="dropme" (dagDrop)="assignCard($event)">
+        <h5>drop here</h5>
+        @if (card()) {
+            <span class="semen">
+                <img [src]="card().src" />
+            </span>
+        }
+    </div>
+</div>
