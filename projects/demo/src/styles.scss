@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@use "sass:color";
+@use 'sass:color';
 @import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
 
 * {
@@ -86,6 +86,9 @@ $pageWidth: 400px;
         width: $pageWidth;
         margin: 0 auto;
         text-align: center;
+        h4 {
+            color: $colorAccent;
+        }
     }
 
     label {
@@ -121,9 +124,6 @@ pre {
 }
 
 #ngx-errors {
-    h4 {
-        color: $colorAccent;
-    }
     dag-error {
         text-align: left;
     }
