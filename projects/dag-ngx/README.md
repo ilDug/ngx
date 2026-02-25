@@ -1,4 +1,6 @@
 # DagNgx
+[![Build](https://github.com/ilDug/ngx/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/ilDug/ngx/actions/workflows/build-and-test.yaml)
+
 
 DagNgx is a collection of Angular components and utilities designed to simplify the development of complex applications. It provides a set of reusable UI components, services, and tools that can be easily integrated into your Angular projects.
 
@@ -41,7 +43,7 @@ A component for displaying error messages in a user-friendly manner when used wi
             <input type="email" [formField]="form.email" />
             <dag-error [field]="form.email"></dag-error>
         </div>
-        <div style="padding: 1rem 0; display: flex">
+        <div>
             <button type="submit" class="btn">Submit</button>
         </div>
     </form>

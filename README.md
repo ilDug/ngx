@@ -43,7 +43,7 @@ A component for displaying error messages in a user-friendly manner when used wi
             <input type="email" [formField]="form.email" />
             <dag-error [field]="form.email"></dag-error>
         </div>
-        <div style="padding: 1rem 0; display: flex">
+        <div>
             <button type="submit" class="btn">Submit</button>
         </div>
     </form>
