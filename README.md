@@ -76,3 +76,13 @@ Directives for implementing drag-and-drop functionality in your Angular applicat
 Use `[dagDrag]` to make an element draggable and bind it to the data you want to transfer during the drag operation. Use `(dagDrop)` to define a drop zone and handle the dropped data.
 
 Use `(onDrag)` to listen for dragging events and update your component state accordingly. it returns a boolean indicating whether the element is currently being dragged.
+
+### DagLoader
+A collection of loading spinner components that can be used to indicate loading states in your Angular applications.
+DagLoader includes various spinner styles, such as pulsing and bouncing loaders, which can be easily customized and integrated into your application.
+
+```html
+    <div *dagLoader="loading(); color: '#e4b2b2'; fullScreen: false; type: 'bouncing'">
+        <p>...it's not a moon it's a space station...</p>
+    </div>
+```

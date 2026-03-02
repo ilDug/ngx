@@ -1,6 +1,6 @@
 {
     "name": "@ildug/dag-ngx",
-    "version": "21.0.1",
+    "version": "21.0.2",
     "description": "A utilities library for Angular applications.",
     "repository": {
         "type": "git",
@@ -10,11 +10,11 @@
     "author": "ilDug",
     "license": "MIT",
     "peerDependencies": {
-        "@angular/common": "^21.1.0",
-        "@angular/core": "^21.1.0"
+        "@angular/common": "^21.2.0",
+        "@angular/core": "^21.2.0"
     },
     "dependencies": {
-        "tslib": "^2.3.0"
+        "tslib": "^2.8.1"
     },
     "sideEffects": false
 }

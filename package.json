@@ -1,6 +1,6 @@
 {
     "name": "@ildug/dag-ngx",
-    "version": "21.0.1",
+    "version": "21.0.2",
     "description": "A utilities library for Angular applications.",
     "repository": {
         "type": "git",
