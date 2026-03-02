@@ -1,0 +1,38 @@
+<div class="example" id="ngx-loader">
+    <h4>NGX-LOADER</h4>
+
+    <p>Angular Loader/Spinner Directive</p>
+
+    <p>Usage with options:</p>
+    <pre>
+<code class="language-html">
+&lt;div class=&quot;box&quot;&gt;
+   &lt;div *dagLoader=&quot;loading; color:&#39;#e4b2b2&#39;; fullScreen: false; type:&#39;pulsing&#39;;&quot;&gt;
+      &lt;h1&gt;It&#39;s a trap!&lt;/h1&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+    <p style="text-align: center">
+        <a href="#" class="btn" (click)="loading.update(l => !l)">Toggle spinner</a>
+    </p>
+    <h4>Bouncing</h4>
+    <div class="box1">
+        <div *dagLoader="loading(); color: '#e4b2b2'; fullScreen: false; type: 'bouncing'">
+            <p>...it's not a moon it's a space station...</p>
+        </div>
+    </div>
+    <h4>Pulsing</h4>
+    <div class="box1">
+        <div *dagLoader="loading(); color: 'rgb(228, 220, 178)'; fullScreen: false; type: 'pulsing'">
+            <p>...it's not a moon it's a space station...</p>
+        </div>
+    </div>
+    <h4>Spinner</h4>
+    <div class="box1">
+        <div *dagLoader="loading(); color: '#e4b2b2'; fullScreen: false; type: 'spinner'">
+            <p>...it's not a moon it's a space station...</p>
+        </div>
+    </div>
+</div>

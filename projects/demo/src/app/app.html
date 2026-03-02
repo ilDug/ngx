@@ -5,6 +5,7 @@
         <div class="nav">
             <a class="btn" (click)="section.set('errors')">errors</a>
             <a class="btn" (click)="section.set('drag-and-drop')">drag-and-drop</a>
+            <a class="btn" (click)="section.set('loader')">loader</a>
         </div>
     </div>
 
@@ -24,6 +25,10 @@
 
             @case ('drag-and-drop') {
                 <demo-dragdrop />
+            }
+
+            @case ('loader') {
+                <demo-loader />
             }
         }
     </div>
