@@ -7,7 +7,8 @@ import { Loader } from '../loader.class';
     templateUrl: './bouncing-loader.component.html',
     styleUrl: './bouncing-loader.component.scss',
     host: {
-        '[class.full-screen]': 'fullScreen()'
+        '[class.full-screen]': 'fullScreen()',
+        '[style.--loader-color]': 'color()'
     }
 })
 export class BouncingLoaderComponent implements Loader {

@@ -7,7 +7,8 @@ import { Loader } from '../loader.class';
     templateUrl: './spinner-loader.component.html',
     styleUrl: './spinner-loader.component.scss',
     host: {
-        '[class.full-screen]': 'fullScreen()'
+        '[class.full-screen]': 'fullScreen()',
+        '[style.--loader-color]': 'color()'
     }
 })
 export class SpinnerLoaderComponent implements Loader {

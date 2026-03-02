@@ -7,7 +7,8 @@ import { Loader } from '../loader.class';
   templateUrl: './pulsing-loader.component.html',
   styleUrl: './pulsing-loader.component.scss',
   host: {
-    '[class.full-screen]': 'fullScreen()'
+      '[class.full-screen]': 'fullScreen()',
+      '[style.--loader-color]': 'color()'
   }
 })
 export class PulsingLoaderComponent implements Loader {

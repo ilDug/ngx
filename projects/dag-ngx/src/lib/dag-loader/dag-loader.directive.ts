@@ -38,7 +38,7 @@ export class DagLoader {
 
 
         if (this.loading()) {
-            // this.vcr.clear();
+            this.vcr.clear();
 
             const compRef = this.vcr.createComponent(this.cmponentType());
             compRef.setInput('color', this.color());
@@ -53,22 +53,4 @@ export class DagLoader {
 
 
     });
-
-    /**
-     * seleziona la classe del compent da istanziare
-     * scegliendo tra i vari tipi di Loader
-     */
-    private resolveLoaderComponent(kind: 'spinner' | 'bouncing' | 'pulsing'): Type<Loader> {
-        switch (kind) {
-            case 'spinner':
-                return SpinnerLoaderComponent;
-            case 'bouncing':
-                return BouncingLoaderComponent;
-            case 'pulsing':
-                return PulsingLoaderComponent;
-            default:
-                return PulsingLoaderComponent;
-        }
-    }
-
 }
