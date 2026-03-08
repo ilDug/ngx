@@ -1,0 +1,139 @@
+:root {
+    // default value,  that can be overriden by the user in custom css
+    --toast-c: hsl(0, 0%, 25%) default;
+    --toast-bg: hsl(0, 0%, 100%) default;
+    --toast-b: hsl(0, 0%, 90%) default;
+}
+
+.toast {
+    width: 320px;
+    max-width: 100%;
+    font-size: 0.8rem;
+    color: var(--toast-c);
+    background-color: var(--toast-bg);
+    pointer-events: auto;
+    background-clip: padding-box;
+    border: 1px solid var(--toast-b);
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+
+    border-left-width: 5px;
+    border-left-style: solid;
+
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.toast-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 1rem;
+
+    .toast-icon {
+        // position: relative;
+        width: 32px;
+        display: grid;
+        grid-template-areas: "stack";
+        justify-content: center;
+        align-items: center;
+
+        & > * {
+            grid-area: stack;
+            margin: auto;
+        }
+    }
+}
+
+.toast-body {
+    padding: 0.5rem;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.t-main {
+    color: var(--c-main);
+}
+
+.t-warn {
+    color: var(--c-warn);
+}
+.t-error {
+    color: var(--c-error);
+}
+
+.b-main {
+    border-left-color: var(--c-main);
+}
+
+.b-warn {
+    border-left-color: var(--c-warn);
+}
+.b-error {
+    border-left-color: var(--c-error);
+}
+
+.btn-close {
+    --btn-close-size: 1rem;
+    --btn-close-c: var(--toast-c);
+    position: relative;
+    cursor: pointer;
+    width: var(--btn-close-size);
+    height: var(--btn-close-size);
+    display: block;
+    margin-right: calc(-0.5 * 0.5rem);
+    margin-left: 0.5rem;
+    margin-top: -1rem;
+
+    &::after,
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        background-color: var(--btn-close-c);
+        width: 2px;
+        height: var(--btn-close-size);
+        border-radius: 2px;
+        transform-origin: center center;
+        top: 0;
+        left: 50%;
+    }
+    &::after {
+        transform: rotate(45deg);
+    }
+
+    &::before {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInRight {
+    animation-name: fadeInRight;
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+.fadeOutRight {
+    animation-name: fadeOutRight;
+}

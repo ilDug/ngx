@@ -1,0 +1,30 @@
+#toast-container {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+
+    /* da  576px in giù */
+    @media (max-width: 575.98px) {
+        right: 0rem;
+        margin: 0rem;
+        max-width: 300px;
+    }
+
+    /* da  576px in su */
+    @media (min-width: 576px) {
+        right: 1rem;
+        margin: 1rem;
+    }
+}

@@ -1,0 +1,5 @@
+<div id="toast-container">
+    @for (t of toasts(); track t.id) {
+        <dag-toast [data]="t()" (close)="closeToast($event)" />
+    }
+</div>
