@@ -1,0 +1,15 @@
+<div class="dag-textarea">
+    <textarea
+        [value]="value()"
+        (input)="value.set($event.target.value)"
+        [placeholder]="placeholder()"
+        [disabled]="disabled()"
+        [readonly]="readonly()"
+        [class.invalid]="invalid()"
+        [attr.aria-invalid]="invalid()"
+        [attr.name]="name()"
+        (blur)="touched.set(true)"
+        [cols]="cols()"
+        [rows]="rows()"
+    ></textarea>
+</div>
