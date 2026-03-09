@@ -6,6 +6,7 @@
             <a class="btn" (click)="section.set('errors')">errors</a>
             <a class="btn" (click)="section.set('drag-and-drop')">drag-and-drop</a>
             <a class="btn" (click)="section.set('loader')">loader</a>
+            <a class="btn" (click)="section.set('textarea')">textarea</a>
         </div>
     </div>
 
@@ -29,6 +30,9 @@
 
             @case ('loader') {
                 <demo-loader />
+            }
+            @case ('textarea') {
+                <demo-textarea />
             }
         }
     </div>
