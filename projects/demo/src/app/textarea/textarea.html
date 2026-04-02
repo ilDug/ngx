@@ -2,6 +2,11 @@
     <h4>DAG-TEXTAREA</h4>
     <p>Type something in the textarea below:</p>
     <div>
-        <dag-textarea/>
+        <dag-textarea [(value)]="content"></dag-textarea>
+    </div>
+
+    <div class="textarea-result">
+        <h4>Result:</h4>
+        <p>{{ content() }}</p>
     </div>
 </div>
